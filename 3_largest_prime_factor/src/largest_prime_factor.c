@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <inttypes.h>
+
+int main()
+{
+  uint64_t uint64_num;
+  uint64_t uint64_prime;
+
+  uint64_num = 600851475143;
+  uint64_prime = 2;
+
+  while(uint64_prime < uint64_num)
+    if(uint64_num % uint64_prime == 0)
+      uint64_num /= uint64_prime;
+    else if(uint64_num % uint64_prime != 0)
+      uint64_prime++;
+    else
+      return 1;
+  
+  printf("The largest prime factor of the number 600851475143 is %" PRIu64 "\n", uint64_prime);
+
+  return 0;
+}
