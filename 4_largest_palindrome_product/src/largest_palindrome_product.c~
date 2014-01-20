@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <inttypes.h>
+#include <string.h>
+
+
+int main()
+{
+  uint32_t uint32_num1;
+  uint32_t uint32_num2;
+  uint32_t uint32_product;
+
+  string str_reverse;
+  str_reverse = "hey!";
+  printf("%s\n", strrev(str_reverse));
+
+  return 0;
+}
