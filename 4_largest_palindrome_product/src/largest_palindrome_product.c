@@ -33,16 +33,19 @@ uint8_t palindrome(uint32_t uint32_a, uint32_t uint32_b)
 {
   uint32_t uint32_product;
   uint32_t uint32_reversed;
+  uint32_t uint32_test;
   
   uint32_product = 0;
-  uint32_reversed = 1;
+  uint32_reversed = 0;
+  uint32_test = 0;
 
   uint32_product = uint32_a * uint32_b;
+  uint32_test = uint32_product;
 
-  while(uint32_product != 0){
+  while(uint32_test != 0){
     uint32_reversed *= 10;
-    uint32_reversed += uint32_product%10;
-    uint32_product /= 10;
+    uint32_reversed += uint32_test % 10;
+    uint32_test /= 10;
   }
 
   if(uint32_product == uint32_reversed)
