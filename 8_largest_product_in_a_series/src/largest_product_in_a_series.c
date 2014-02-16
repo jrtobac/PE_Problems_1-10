@@ -26,10 +26,8 @@ int main()
 	
 	/* Read in the file */
 	for(i=0; (ch = fgetc(fp)) != EOF; ){
-		printf("%c", ch);
 		if(ch != '\n'){
 			otdn[i] = ch - '0';
-			printf("array: %d\n", otdn[i]);
 			i++;
 		}
 	}
@@ -38,7 +36,10 @@ int main()
 	fclose(fp);
 
 	/* find the greatest product */
-	for(i=0; i<996; i++){
+	for(i=0; i<997; i++){
+		if (otdn[i + 4] == 0 && i < 992){
+			i += 5;
+		}
 		if ((product = otdn[i] * otdn[i+1] * otdn[i+2] * otdn[i+3] * otdn[i+4]) > gp){
 			gp = product;	
 		}
